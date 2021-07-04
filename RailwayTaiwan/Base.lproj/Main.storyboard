@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.4"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,6 +24,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="zsY-10-9sx" kind="show" identifier="StationDetail" id="VZN-q6-0Sy"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -35,6 +39,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XNH-Am-41D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1184.0579710144928" y="169.41964285714286"/>
+        </scene>
+        <!--車站-->
+        <scene sceneID="83k-5g-mIu">
+            <objects>
+                <viewController id="zsY-10-9sx" customClass="StationDetailViewController" customModule="RailwayTaiwan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gdf-Hm-35j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北上列車" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EDF-iK-SMp">
+                                <rect key="frame" x="0.0" y="88" width="207" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="南下列車" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QW2-jb-yuv">
+                                <rect key="frame" x="207" y="88" width="207" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXK-vp-h0x">
+                                <rect key="frame" x="0.0" y="109" width="207" height="753"/>
+                                <connections>
+                                    <segue destination="wBx-L4-4oV" kind="embed" identifier="North" id="Azg-zK-qnb"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTa-L8-9q2">
+                                <rect key="frame" x="207" y="109" width="207" height="753"/>
+                                <connections>
+                                    <segue destination="NDP-CS-Bu5" kind="embed" identifier="South" id="Wsw-Q3-6R0"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YHt-fR-wVG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DTa-L8-9q2" firstAttribute="top" secondItem="QW2-jb-yuv" secondAttribute="bottom" id="3ko-0Y-LVy"/>
+                            <constraint firstItem="DTa-L8-9q2" firstAttribute="width" secondItem="jXK-vp-h0x" secondAttribute="width" id="6ly-6A-9hG"/>
+                            <constraint firstItem="QW2-jb-yuv" firstAttribute="trailing" secondItem="YHt-fR-wVG" secondAttribute="trailing" id="9q6-Af-vgk"/>
+                            <constraint firstItem="QW2-jb-yuv" firstAttribute="top" secondItem="YHt-fR-wVG" secondAttribute="top" id="ALi-lC-5rl"/>
+                            <constraint firstItem="EDF-iK-SMp" firstAttribute="leading" secondItem="YHt-fR-wVG" secondAttribute="leading" id="OGH-Pm-Zo1"/>
+                            <constraint firstItem="DTa-L8-9q2" firstAttribute="leading" secondItem="jXK-vp-h0x" secondAttribute="trailing" id="R8D-vM-Ndq"/>
+                            <constraint firstItem="jXK-vp-h0x" firstAttribute="top" secondItem="EDF-iK-SMp" secondAttribute="bottom" id="SSO-ph-Jm7"/>
+                            <constraint firstItem="QW2-jb-yuv" firstAttribute="width" secondItem="EDF-iK-SMp" secondAttribute="width" id="X9V-in-Tx3"/>
+                            <constraint firstItem="jXK-vp-h0x" firstAttribute="bottom" secondItem="YHt-fR-wVG" secondAttribute="bottom" id="bwY-lW-vm3"/>
+                            <constraint firstItem="DTa-L8-9q2" firstAttribute="bottom" secondItem="YHt-fR-wVG" secondAttribute="bottom" id="byN-We-oJg"/>
+                            <constraint firstItem="EDF-iK-SMp" firstAttribute="top" secondItem="YHt-fR-wVG" secondAttribute="top" id="dGz-Dx-oc3"/>
+                            <constraint firstItem="jXK-vp-h0x" firstAttribute="width" secondItem="Gdf-Hm-35j" secondAttribute="width" multiplier="0.5" id="jl1-uz-pOw"/>
+                            <constraint firstItem="jXK-vp-h0x" firstAttribute="leading" secondItem="YHt-fR-wVG" secondAttribute="leading" id="l5z-8c-7d8"/>
+                            <constraint firstItem="DTa-L8-9q2" firstAttribute="trailing" secondItem="YHt-fR-wVG" secondAttribute="trailing" id="uLF-ez-JKt"/>
+                            <constraint firstItem="EDF-iK-SMp" firstAttribute="width" secondItem="Gdf-Hm-35j" secondAttribute="width" multiplier="0.5" id="vdN-WK-MVx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="車站" id="k2G-Hx-Fw9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="php-RM-xG1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2134.7826086956525" y="176.78571428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hv5-hC-rau">
@@ -53,6 +116,182 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hto-56-yai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="273.91304347826087" y="169.41964285714286"/>
+        </scene>
+        <!--North Train View Controller-->
+        <scene sceneID="YPx-i6-QxZ">
+            <objects>
+                <viewController id="wBx-L4-4oV" customClass="NorthTrainViewController" customModule="RailwayTaiwan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hb3-xS-r3p">
+                        <rect key="frame" x="0.0" y="0.0" width="207" height="753"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kgV-s5-NWh">
+                                <rect key="frame" x="0.0" y="44" width="207" height="709"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="117" id="p6n-98-L47" customClass="StationDetailTableViewCell" customModule="RailwayTaiwan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="207" height="117"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p6n-98-L47" id="cSD-0C-Tz9">
+                                            <rect key="frame" x="0.0" y="0.0" width="207" height="117"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="uAC-RD-3hr">
+                                                    <rect key="frame" x="91" y="16" width="100" height="85.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="區間車" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V25-VG-SKN">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="100" id="lG3-vO-YhE"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="往基隆" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xts-fp-x4w">
+                                                            <rect key="frame" x="0.0" y="32.5" width="100" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="100" id="dRh-x2-JHh"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="準點" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3X-1v-R3e">
+                                                            <rect key="frame" x="0.0" y="65" width="100" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="100" id="CtG-vu-8AY"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uAC-RD-3hr" firstAttribute="top" secondItem="cSD-0C-Tz9" secondAttribute="topMargin" constant="5" id="DEk-dx-IFV"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="uAC-RD-3hr" secondAttribute="bottom" constant="4.5" id="FeL-U1-70R"/>
+                                                <constraint firstItem="uAC-RD-3hr" firstAttribute="trailing" secondItem="cSD-0C-Tz9" secondAttribute="trailingMargin" id="hLn-Et-Md0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="delay_N" destination="l3X-1v-R3e" id="SU0-z5-f6J"/>
+                                            <outlet property="endStation_N" destination="xts-fp-x4w" id="BaL-tJ-XSq"/>
+                                            <outlet property="trainType_N" destination="V25-VG-SKN" id="rMv-bH-Esg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wBx-L4-4oV" id="cTw-gG-GpX"/>
+                                    <outlet property="delegate" destination="wBx-L4-4oV" id="ffz-wW-x3e"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nYZ-9o-SFA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kgV-s5-NWh" firstAttribute="top" secondItem="nYZ-9o-SFA" secondAttribute="top" id="LHA-00-Enk"/>
+                            <constraint firstItem="nYZ-9o-SFA" firstAttribute="bottom" secondItem="kgV-s5-NWh" secondAttribute="bottom" id="Q9X-9k-ViX"/>
+                            <constraint firstItem="kgV-s5-NWh" firstAttribute="leading" secondItem="Hb3-xS-r3p" secondAttribute="leading" id="Tpo-eb-hPX"/>
+                            <constraint firstAttribute="trailing" secondItem="kgV-s5-NWh" secondAttribute="trailing" id="f3M-hE-nJz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="northTableView" destination="kgV-s5-NWh" id="tc0-au-6gU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ktq-t2-5vQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955.7971014492755" y="911.71875"/>
+        </scene>
+        <!--South Train View Controller-->
+        <scene sceneID="SwX-gB-Rqb">
+            <objects>
+                <viewController id="NDP-CS-Bu5" customClass="SouthTrainViewController" customModule="RailwayTaiwan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qrZ-Ug-NWP">
+                        <rect key="frame" x="0.0" y="0.0" width="207" height="753"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K2m-8n-3ab">
+                                <rect key="frame" x="0.0" y="44" width="207" height="709"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="117" id="wZN-NW-d1h" customClass="StationDetailTableViewCell" customModule="RailwayTaiwan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="207" height="117"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wZN-NW-d1h" id="VJE-ep-mLs">
+                                            <rect key="frame" x="0.0" y="0.0" width="207" height="117"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bKu-6K-HJB">
+                                                    <rect key="frame" x="91" y="12" width="100" height="93.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="區間車" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrT-Qe-788">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="100" id="F2b-4z-8xR"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="往基隆" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cs7-em-BXh">
+                                                            <rect key="frame" x="0.0" y="36.5" width="100" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="100" id="bUm-cR-eT1"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="準點" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXv-ay-w8d">
+                                                            <rect key="frame" x="0.0" y="73" width="100" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="100" id="x36-jh-6QY"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bKu-6K-HJB" firstAttribute="top" secondItem="VJE-ep-mLs" secondAttribute="topMargin" constant="1" id="XDc-Kh-WJK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bKu-6K-HJB" secondAttribute="bottom" constant="0.5" id="dAi-R7-R6U"/>
+                                                <constraint firstItem="bKu-6K-HJB" firstAttribute="trailing" secondItem="VJE-ep-mLs" secondAttribute="trailingMargin" id="raa-Sr-7fQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="delay_S" destination="LXv-ay-w8d" id="NEP-2m-btF"/>
+                                            <outlet property="endStation_S" destination="Cs7-em-BXh" id="kTe-ac-5SM"/>
+                                            <outlet property="trainType_S" destination="NrT-Qe-788" id="rFM-NF-ujr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NDP-CS-Bu5" id="Jna-xS-jd3"/>
+                                    <outlet property="delegate" destination="NDP-CS-Bu5" id="dTO-kS-HKH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jWC-Mo-j3x"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="K2m-8n-3ab" firstAttribute="top" secondItem="jWC-Mo-j3x" secondAttribute="top" id="bKy-kw-xtr"/>
+                            <constraint firstItem="jWC-Mo-j3x" firstAttribute="bottom" secondItem="K2m-8n-3ab" secondAttribute="bottom" id="hXc-du-nXq"/>
+                            <constraint firstAttribute="trailing" secondItem="K2m-8n-3ab" secondAttribute="trailing" id="iZL-rw-ehH"/>
+                            <constraint firstItem="K2m-8n-3ab" firstAttribute="leading" secondItem="qrZ-Ug-NWP" secondAttribute="leading" id="zY0-o7-gmc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="southTableView" destination="K2m-8n-3ab" id="PR5-g1-ekJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SGo-Bv-zMU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2332.608695652174" y="911.71875"/>
         </scene>
     </scenes>
     <resources>

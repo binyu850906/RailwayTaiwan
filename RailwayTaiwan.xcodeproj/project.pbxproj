@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		790FD4002691A28100D681E1 /* StationDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790FD3FF2691A28100D681E1 /* StationDetailTableViewCell.swift */; };
 		7921EB6A26905C3F001CA531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921EB6926905C3F001CA531 /* AppDelegate.swift */; };
 		7921EB6C26905C3F001CA531 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921EB6B26905C3F001CA531 /* SceneDelegate.swift */; };
 		7921EB7126905C3F001CA531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7921EB6F26905C3F001CA531 /* Main.storyboard */; };
@@ -15,9 +16,13 @@
 		7921EB8126905EB2001CA531 /* networkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921EB8026905EB2001CA531 /* networkController.swift */; };
 		7921EB83269064FB001CA531 /* TRA_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921EB82269064FB001CA531 /* TRA_API.swift */; };
 		7921EB85269081D8001CA531 /* TRAStationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921EB84269081D8001CA531 /* TRAStationTableViewController.swift */; };
+		7921EB87269192A4001CA531 /* StationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921EB86269192A4001CA531 /* StationDetailViewController.swift */; };
+		7921EB8926919B0B001CA531 /* NorthTrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921EB8826919B0A001CA531 /* NorthTrainViewController.swift */; };
+		7921EB8B26919B1E001CA531 /* SouthTrainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7921EB8A26919B1E001CA531 /* SouthTrainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		790FD3FF2691A28100D681E1 /* StationDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailTableViewCell.swift; sourceTree = "<group>"; };
 		7921EB6626905C3F001CA531 /* RailwayTaiwan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RailwayTaiwan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7921EB6926905C3F001CA531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7921EB6B26905C3F001CA531 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +33,9 @@
 		7921EB8026905EB2001CA531 /* networkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = networkController.swift; path = Controller/networkController.swift; sourceTree = SOURCE_ROOT; };
 		7921EB82269064FB001CA531 /* TRA_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRA_API.swift; sourceTree = "<group>"; };
 		7921EB84269081D8001CA531 /* TRAStationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TRAStationTableViewController.swift; path = Controller/TRAStationTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		7921EB86269192A4001CA531 /* StationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailViewController.swift; sourceTree = "<group>"; };
+		7921EB8826919B0A001CA531 /* NorthTrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorthTrainViewController.swift; sourceTree = "<group>"; };
+		7921EB8A26919B1E001CA531 /* SouthTrainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SouthTrainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,9 +52,9 @@
 		7921EB5D26905C3F001CA531 = {
 			isa = PBXGroup;
 			children = (
-				7921EB7F26905C61001CA531 /* Model */,
 				7921EB7E26905C5C001CA531 /* View */,
 				7921EB7D26905C52001CA531 /* Controller */,
+				7921EB7F26905C61001CA531 /* Model */,
 				7921EB6826905C3F001CA531 /* RailwayTaiwan */,
 				7921EB6726905C3F001CA531 /* Products */,
 			);
@@ -63,8 +71,8 @@
 		7921EB6826905C3F001CA531 /* RailwayTaiwan */ = {
 			isa = PBXGroup;
 			children = (
-				7921EB6926905C3F001CA531 /* AppDelegate.swift */,
 				7921EB6B26905C3F001CA531 /* SceneDelegate.swift */,
+				7921EB6926905C3F001CA531 /* AppDelegate.swift */,
 				7921EB6F26905C3F001CA531 /* Main.storyboard */,
 				7921EB7226905C42001CA531 /* Assets.xcassets */,
 				7921EB7426905C42001CA531 /* LaunchScreen.storyboard */,
@@ -78,6 +86,9 @@
 			children = (
 				7921EB8026905EB2001CA531 /* networkController.swift */,
 				7921EB84269081D8001CA531 /* TRAStationTableViewController.swift */,
+				7921EB86269192A4001CA531 /* StationDetailViewController.swift */,
+				7921EB8826919B0A001CA531 /* NorthTrainViewController.swift */,
+				7921EB8A26919B1E001CA531 /* SouthTrainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -85,6 +96,7 @@
 		7921EB7E26905C5C001CA531 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				790FD3FF2691A28100D681E1 /* StationDetailTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				790FD4002691A28100D681E1 /* StationDetailTableViewCell.swift in Sources */,
+				7921EB8926919B0B001CA531 /* NorthTrainViewController.swift in Sources */,
+				7921EB8B26919B1E001CA531 /* SouthTrainViewController.swift in Sources */,
+				7921EB87269192A4001CA531 /* StationDetailViewController.swift in Sources */,
 				7921EB83269064FB001CA531 /* TRA_API.swift in Sources */,
 				7921EB8126905EB2001CA531 /* networkController.swift in Sources */,
 				7921EB6A26905C3F001CA531 /* AppDelegate.swift in Sources */,
